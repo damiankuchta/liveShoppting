@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axios from '../../../axios/customAxious';
+
 const initialState = {
   user: null,
   isAuthenticated: false,
@@ -33,7 +34,7 @@ export const { loginSuccess, loginFailure, logoutSuccess } = authSlice.actions;
 export const login = (credentials) => async (dispatch) => {
   try {
     // make login API call and get user data
-    const response = await axios.post('/api/login', credentials);
+    const response = await axios.post('login/', credentials);
     const user = null
     dispatch(loginSuccess(user));
   } catch (error) {

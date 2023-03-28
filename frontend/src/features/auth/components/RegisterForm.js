@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { TextField, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { register } from '../reducers/registerSlce';
+import { register as postRegister } from '../reducers/registerSlce';
 
 const Form = styled('form')({
   display: 'flex',
@@ -21,18 +21,18 @@ const RegisterForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (formData) => {
-    dispatch(register(formData));
+    dispatch(postRegister(formData));
   };
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <TextField
-        label="Name"
+        label="Username"
         type="text"
-        id="name"
-        {...register('name', { required: true })}
-        error={!!errors.name}
-        helperText={errors.name ? 'This field is required' : ''}
+        id="username"
+        {...register('username', { required: true })}
+        error={!!errors.username}
+        helperText={errors.username ? 'This field is required' : ''}
       />
 
       <TextField
@@ -47,8 +47,18 @@ const RegisterForm = () => {
       <TextField
         label="Password"
         type="password"
-        id="password"
-        {...register('password', { required: true })}
+        id="password1"
+        {...register('password1', { required: true })}
+        error={!!errors.password}
+        helperText={errors.password ? 'This field is required' : ''}
+      />
+
+
+        <TextField
+        label="Repeat password"
+        type="password"
+        id="password2"
+        {...register('password2', { required: true })}
         error={!!errors.password}
         helperText={errors.password ? 'This field is required' : ''}
       />

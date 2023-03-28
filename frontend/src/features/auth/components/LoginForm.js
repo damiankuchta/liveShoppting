@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { login } from '../reducers/authSlice';
+import { login } from '../reducers/loginSlice';
 import { styled } from '@mui/material/styles';
 
 const StyledForm = styled('form')({
