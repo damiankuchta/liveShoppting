@@ -1,4 +1,4 @@
-import axios from '../axios/customAxious';
+import axios from '../configs/customAxios';
 
 const getCrsf = () => {
   axios.post('/get-csrf-token/', {})
