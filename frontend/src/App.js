@@ -11,6 +11,11 @@ import RegisterForm from "./features/auth/components/RegisterForm";
 
 import getCrsf from "./utils/getCsrf";
 
+import awsConfig from "./configs/awsConfig";
+import AWS from 'aws-sdk';
+
+AWS.config.update(awsConfig);
+
 export default function App() {
 
   useEffect(() => {
