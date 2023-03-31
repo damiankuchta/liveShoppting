@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os
 from . import keys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -49,8 +48,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'profiles',
 ]
-
-SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
